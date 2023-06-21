@@ -1,4 +1,6 @@
-﻿namespace LoggingKata
+﻿using System;
+
+namespace LoggingKata
 {
     /// <summary>
     /// Parses a POI file to locate all the Taco Bells
@@ -38,14 +40,22 @@
             // Then, you'll need an instance of the TacoBell class
             // With the name and point set correctly
             var point = new Point();
+            point.Latitude = lat;
+            point.Longitude = longitude;
+
             var TacoBell = new TacoBell();
             TacoBell.Name = name;
-            TacoBell.Location
+            TacoBell.Location = point;
 
             // Then, return the instance of your TacoBell class
             // Since it conforms to ITrackable
 
             return TacoBell;
+        }
+
+        public object Parse()
+        {
+            throw new NotImplementedException();
         }
     }
 }
